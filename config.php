@@ -1,6 +1,6 @@
 <?php
 
-$db_name = "myslq:host=localhost;dbname=aqui_tem_peca_db";
+$db_name = "mysql:host=localhost;dbname=aqui_tem_peca_db";
 $username = "root";
 $password = "";
 
