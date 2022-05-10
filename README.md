@@ -1,4 +1,4 @@
-# TCC - Aqui tem peça
+# TCC - Aqui Tem Peça
 
 Repositório do TCC.
 
