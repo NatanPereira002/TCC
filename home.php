@@ -22,9 +22,9 @@ if(!isset($user_id)){
 </head>
 <body>
 
-<h1> Página inicial </h1>
+<h1>Página inicial</h1>
 
-<a href="logout.php">Logout</a>
+<a href="logout.php">Sair</a>
 
 </body>
 </html>

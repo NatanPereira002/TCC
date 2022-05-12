@@ -19,12 +19,33 @@ if(!isset($admin_id)){
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Página do administrador</title>
+
+  <!-- Links da fonte-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+ <!--Links da custumização-->
+ <link rel="stylesheet" href="css/components.css">
+
 </head>
 <body>
 
-<h1> Página do administrador </h1>
+<?php include 'admin_header.php'; ?>
 
-<a href="logout.php">Logout</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script scr="js/script.js"></script>
 
 </body>
 </html>
