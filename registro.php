@@ -14,13 +14,15 @@ if(isset($_POST['submit'])){
    $cpass = md5($_POST['cpass']);
    $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
 
-$image = $_FILES['image']['name'];
-$image_size = $_FILES['image']['size'];
-$image_tmp_name = $_FILES['image']['tmp_name'];
-$image_folder = 'uploaded_img/'.$image;
+   $image = $_FILES['image']['name'];
+   $image = filter_var($image, FILTER_SANITIZE_STRING);
+   $image_size = $_FILES['image']['size'];
+   $image_tmp_name = $_FILES['image']['tmp_name'];
+   $image_folder = 'uploaded_img/'.$image;
 
-$select = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
-$select->execute([$email]);
+  
+    $select = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
+    $select->execute([$email]);
 
 if($select->rowCount() > 0){
     $message[] = 'Este endereço de email já está sendo usado.';
@@ -72,18 +74,18 @@ else{
 
     <?php
 
-if(isset($message)){
-   foreach($message as $message){
-      echo '
-      <div class="message">
-         <span>'.$message.'</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-      </div>
-      ';
-   }
-}
+        if(isset($message)){
+        foreach($message as $message){
+            echo '
+            <div class="message">
+                <span>'.$message.'</span>
+                <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+            </div>
+            ';
+        }
+        }
 
-?>
+    ?>
 
         <section class="form-container">
             <form action="" enctupe="multipar/form-data" method="POST">
