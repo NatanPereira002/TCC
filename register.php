@@ -1,7 +1,7 @@
 
 <?php
 
-include 'config.php';
+include 'config.php'
 
 if(isset($_POST['submit'])){
 
@@ -14,15 +14,13 @@ if(isset($_POST['submit'])){
    $cpass = md5($_POST['cpass']);
    $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
 
-   $image = $_FILES['image']['name'];
-   $image = filter_var($image, FILTER_SANITIZE_STRING);
-   $image_size = $_FILES['image']['size'];
-   $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folder = 'uploaded_img/'.$image;
+$image = $_FILES['image']['name'];
+$image_size = $_FILES['image']['size'];
+$image_tmp_name = $_FILES['image']['tmp_name'];
+$image_folder = 'uploaded_img/'.$image;
 
-  
-    $select = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
-    $select->execute([$email]);
+$select = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
+$select->execute([$email]);
 
 if($select->rowCount() > 0){
     $message[] = 'Este endereço de email já está sendo usado.';
@@ -60,7 +58,7 @@ else{
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastrar</title>
+        <title>Cadastro</title>
 
         <!--Links da fonte-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -74,18 +72,18 @@ else{
 
     <?php
 
-        if(isset($message)){
-        foreach($message as $message){
-            echo '
-            <div class="message">
-                <span>'.$message.'</span>
-                <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-            </div>
-            ';
-        }
-        }
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
 
-    ?>
+?>
 
         <section class="form-container">
             <form action="" enctupe="multipar/form-data" method="POST">
@@ -93,7 +91,7 @@ else{
                 <input type="text" name="name" class="box" placeholder="Nome comleto" required>
                 <input type="email" name="email" class="box" placeholder="Seu E-mail" required>
                 <input type="password" name="pass" class="box" placeholder="Senha" required>
-                <input type="password" name="cpass" class="box" placeholder="Confirma senha" required>
+                <input type="password" name="cpass" class="box" placeholder="Confirme a senha" required>
                 <input type="file" name="image" class="box" required accept="image/jpg, image/jpeg, image/png">
                 <input type="submit" value="Cadastrar" class="btn" name="submit">
                 <p>Você já possue uma conta?<a href="login.php"> Entrar</a></p>

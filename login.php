@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
       }
 
    }else{
-      $message[] = 'Senha ou email incorretos!';
+      $message[] = 'Senha ou e-mail incorretos!';
    }
 
 }
@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>login</title>
+   <title>Login</title>
 
   <!-- Links da fonte-->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -78,11 +78,11 @@ if(isset($message)){
 <section class="form-container">
 
    <form action="" method="POST">
-      <h3>Entrar agora</h3>
+      <h3>Entrar</h3>
       <input type="email" name="email" class="box" placeholder="enter your email" required>
       <input type="password" name="pass" class="box" placeholder="enter your password" required>
       <input type="submit" value="login now" class="btn" name="submit">
-      <p>Não possue uma conta? <a href="register.php">Registrar agora</a></p>
+      <p>Não possue uma conta? <a href="register.php">Cadastre-se</a></p>
    </form>
 
 </section>
