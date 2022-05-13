@@ -4,9 +4,9 @@
 
 session_start();
 
-$admin_id = $_SESSION['admin_id'];
+$user_id = $_SESSION['user_id'];
 
-if(!isset($admin_id)){
+if(!isset($user_id)){
    header('location:login.php');
 };
 
@@ -18,7 +18,7 @@ if(isset($_POST['update_profile'])){
    $email = filter_var($email, FILTER_SANITIZE_STRING);
 
    $update_profile = $conn->prepare("UPDATE `users` SET name = ?, email = ? WHERE id = ?");
-   $update_profile->execute([$name, $email, $admin_id]);
+   $update_profile->execute([$name, $email, $user_id]);
 
    $image = $_FILES['image']['name'];
    $image = filter_var($image, FILTER_SANITIZE_STRING);
@@ -32,7 +32,7 @@ if(isset($_POST['update_profile'])){
          $message[] = 'O tamanho da imagem é muito grande!';
       }else{
          $update_image = $conn->prepare("UPDATE `users` SET image = ? WHERE id = ?");
-         $update_image->execute([$image, $admin_id]);
+         $update_image->execute([$image, $user_id]);
          if($update_image){
             move_uploaded_file($image_tmp_name, $image_folder);
             unlink('uploaded_img/'.$old_image);
@@ -56,7 +56,7 @@ if(isset($_POST['update_profile'])){
          $message[] = 'A senha não corresponde!';
       }else{
          $update_pass_query = $conn->prepare("UPDATE `users` SET password = ? WHERE id = ?");
-         $update_pass_query->execute([$confirm_pass, $admin_id]);
+         $update_pass_query->execute([$confirm_pass, $user_id]);
          $message[] = 'Senha atualizada com sucesso!';
       }
    }
@@ -71,7 +71,7 @@ if(isset($_POST['update_profile'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Atualizar perfil do administrador</title>
+   <title>Atualizar perfil do usuário</title>
 
   <!-- Links da fonte-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -82,7 +82,7 @@ if(isset($_POST['update_profile'])){
 </head>
 <body>
 
-<?php include 'admin_header.php'; ?>
+<?php include 'header.php'; ?>
 
 <section class="update-profile">
 
@@ -112,7 +112,7 @@ if(isset($_POST['update_profile'])){
       </div>
       <div class="flex-btn">
          <input type="submit" class="btn" value="update profile" name="update_profile">
-         <a href="admin_page.php" class="option-btn">Voltar</a>
+         <a href="home.php" class="option-btn">Voltar</a>
       </div>
    </form>
 
