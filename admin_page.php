@@ -24,28 +24,14 @@ if(!isset($admin_id)){
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
  <!--Links da custumização-->
- <link rel="stylesheet" href="css/admin_style.css">
+  <link rel="stylesheet" href="css/components.css">
 
 </head>
 <body>
 
-<?php include 'admin_header.php'; ?>
+   <?php include 'admin_header.php'; ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script scr="js/script.js"></script>
+   
 
 </body>
 </html>

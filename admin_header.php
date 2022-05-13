@@ -14,10 +14,11 @@ if(isset($message)){
 ?>
 
 <header class="header">
+  
 
    <div class="flex">
 
-      <a href="admin_page.php" class="logo">Painel<span>do administrador</span></a>
+      <a href="admin_page.php" class="logo">Painel <span>do administrador</span></a>
 
       <nav class="navbar">
          <a href="admin_page.php">Home</a>

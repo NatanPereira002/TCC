@@ -1,7 +1,7 @@
 
 <?php
 
-include 'config.php'
+include 'config.php';
 
 if(isset($_POST['submit'])){
 
@@ -15,6 +15,7 @@ if(isset($_POST['submit'])){
    $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
 
 $image = $_FILES['image']['name'];
+$image = filter_var($image, FILTER_SANITIZE_STRING);
 $image_size = $_FILES['image']['size'];
 $image_tmp_name = $_FILES['image']['tmp_name'];
 $image_folder = 'uploaded_img/'.$image;

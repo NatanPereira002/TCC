@@ -120,16 +120,6 @@ if(isset($_POST['update_profile'])){
 
 
 
-
-
-
-
-
-
-
-
-
-
 <script src="js/script.js"></script>
 
 </body>
