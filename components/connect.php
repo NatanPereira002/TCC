@@ -1,6 +1,6 @@
 <?php
 
-$db_name = 'mysql:host=localhost;dbname=aqui_tem_peca_db';
+$db_name = 'mysql:host=127.0.0.1:3307;dbname=aqui_tem_peca_db';
 $user_name = 'root';
 $user_password = '';
 

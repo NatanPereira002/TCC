@@ -63,13 +63,13 @@ if(isset($_POST['submit'])){
        <section class="form-container">
 
        <form action="" method="POST">
-           <h3>Logar</h3>
-           <p>nome de usuário padrão = <span>ADMIN</span> & Senha = <span>111</span></p>
+           <h3>Entrar</h3>
+          
            <input type="text" name="name" maxlength="20" required placeholder="Digita seu nome" class="box" oninput="this.value =this.value.replace(/\s/g, '')">
 
            <input type="password" name="pass" maxlength="20" required placeholder="Digita seu senha" class="box" oninput="this.value =this.value.replace(/\s/g, '')">
 
-           <input type="submit" value="logar" name="submit" class="btn" >
+           <input type="submit" value="Entrar" name="submit" class="btn" >
 
        </form>
 
